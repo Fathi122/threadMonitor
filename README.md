@@ -2,7 +2,7 @@
 
 This example shows how to scrape jmeter metrics into Prometheus.
 
-## Deploy sample application running jmx prometheus java agent
+## Deploy sample application running Jmx prometheus java agent
 ```
 kubectl create -f deployment/k8s-threadmonitor-deployment.yaml
 ```
@@ -15,7 +15,11 @@ helm repo update
 helm install prometheus prometheus-community/kube-prometheus-stack -f deployment/datasource-prom.yaml --namespace monitoring
 ```
 
-## Deploy jmx operator
+## Deploy Jmx operator
 ```
 ./start-jmx-prom-operator.sh
 ```
+
+## Create a new Grafana dashboard with Jmx metrics
+
+Upload prometheus-jmx-exporter_rev.json file to create a new Jmx prometheus dashboard and select the newly created prometheus datasource.
