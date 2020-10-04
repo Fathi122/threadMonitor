@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: servicemonitor-threadmonitor
+  labels:
+    jmx: prometheus-service
+spec:
+  selector:
+    matchLabels:
+      app: threadmonitor-test
+  namespaceSelector:
+    any: true
+  endpoints:
+  - port: metrics
+    path: /metrics
+    interval: 10s
+

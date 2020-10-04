@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: threadmonitor-test
+  namespace: threadmonit
+spec:
+  type: ClusterIP
+  selector:
+    app: threadmonitor-test
+  ports:
+    - port: 8083
+      name: metrics
+      protocol: TCP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: threadmonitor-test
+  name: threadmonitor-test
+  namespace: threadmonit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: threadmonitor-test
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: threadmonitor-test
+      namespace: threadmonit
+    spec:
+      containers:
+      - image: taf122/threadmonitor-test:latest
+        imagePullPolicy: Always
+        name: threadmonitor
+        ports:
+        - containerPort: 8083
+          name: metrics
+        command:
+        - /opt/threadMonitor/starmonitor.sh

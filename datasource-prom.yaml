@@ -1,0 +1,7 @@
+grafana:
+  additionalDataSources:
+  - name: Prometheus-jmx
+    type: prometheus
+    url: http://threadmonitor-svc:9090/
+    access: proxy
+    version: 1

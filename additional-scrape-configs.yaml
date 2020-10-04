@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  addi-prom.yaml: LSBqb2JfbmFtZTogJ3Byb21ldGhldXMtam14Jw0KICBzdGF0aWNfY29uZmlnczoNCiAgLSB0YXJnZXRzOiBbInRocmVhZG1vbml0b3ItdGVzdC50aHJlYWRtb25pdDo4MDgzIl0=
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: additional-scrape-configs
