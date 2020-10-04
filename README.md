@@ -1,6 +1,6 @@
 # Prometheus Jmx Exporter Operator deployment on K8s
 
-This example shows how to scrape jmeter metrics into Prometheus.
+This example shows how to scrape Jmx metrics into Prometheus.
 
 ## Deploy sample application running Jmx prometheus java agent
 ```
@@ -22,4 +22,4 @@ helm install prometheus prometheus-community/kube-prometheus-stack -f deployment
 
 ## Create a new Grafana dashboard with Jmx metrics
 
-Upload prometheus-jmx-exporter_rev.json file to create a new Jmx prometheus dashboard and select the newly created prometheus datasource.
+Upload prometheus-jmx-exporter_rev1.json file to create a new Jmx prometheus dashboard and select the newly created prometheus datasource.
