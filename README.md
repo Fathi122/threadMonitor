@@ -12,7 +12,7 @@ kubectl create -f deployment/k8s-threadmonitor-deployment.yaml
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 helm repo update
-helm install prometheus prometheus-community/kube-prometheus-stack -f deployment/datasource-prom.yaml --namespace monitoring
+helm install prometheus prometheus-community/kube-prometheus-stack -f deployment/datasource-prom.yaml --create-namespace --namespace monitoring
 ```
 
 ## Deploy Jmx operator
