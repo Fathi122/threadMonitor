@@ -20,6 +20,13 @@ helm install prometheus prometheus-community/kube-prometheus-stack -f deployment
 ./start-jmx-prom-operator.sh
 ```
 
+## Observe Grafana dashboard
+
+Do a port forwarding on Grafana K8s pod in monitoring namespace on port 3000
+```console
+kubectl port-forward $(kubectl get pods --selector=app.kubernetes.io/name=grafana --output=jsonpath="{.items..metadata.name}" -n monitoring) 3000 -n monitoring
+```
+
 ## Create a new Grafana dashboard with Jmx metrics
 
 Upload **prometheus-jmx-exporter_rev1.json** file to create a new Jmx prometheus dashboard and select the newly created prometheus datasource.
