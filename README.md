@@ -22,4 +22,4 @@ helm install prometheus prometheus-community/kube-prometheus-stack -f deployment
 
 ## Create a new Grafana dashboard with Jmx metrics
 
-Upload prometheus-jmx-exporter_rev1.json file to create a new Jmx prometheus dashboard and select the newly created prometheus datasource.
+Upload **prometheus-jmx-exporter_rev1.json** file to create a new Jmx prometheus dashboard and select the newly created prometheus datasource.
