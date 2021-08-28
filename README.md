@@ -30,3 +30,13 @@ kubectl port-forward $(kubectl get pods --selector=app.kubernetes.io/name=grafan
 ## Create a new Grafana dashboard with Jmx metrics
 
 Upload **prometheus-jmx-exporter_rev1.json** file to create a new Jmx prometheus dashboard and select the newly created prometheus datasource.
+
+## Clean Up Prometheus deployment
+```console
+helm uninstall prometheus -n monitoring
+```
+
+## Clean Up JMX Prometheus Operator and ThreadMonitor deployments
+```console
+./clean-up-threadmonit-and-jmx-prom-operator.sh
+```
