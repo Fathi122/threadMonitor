@@ -37,7 +37,7 @@ spec:
       namespace: threadmonit
     spec:
       containers:
-      - image: taf122/threadmonitor-test:latest
+      - image: taf122/threadmonitor-docker-img:latest
         imagePullPolicy: Always
         name: threadmonitor
         ports:
