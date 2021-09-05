@@ -1,4 +1,4 @@
-FROM openjdk:15-alpine
+FROM openjdk:18-jdk-alpine
 
 RUN mkdir -p /opt/threadMonitor
 
